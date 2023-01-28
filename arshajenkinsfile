@@ -6,5 +6,10 @@ pipeline {
         git credentialsId: 'javarepo', url: 'https://github.com/arshatestgit/myweb'
       }
     }
+   stage ('build') {
+     steps {
+        sh "mvn clean package"
+     }
+   }
   }
 }
